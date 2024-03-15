@@ -1,0 +1,7 @@
+gl(oom|um)([a-z]*)
+haunt([a-z]*)
+myster(y|[a-z]+)
+forebod([a-z]+)
+melanchol([a-z]*)
+terror([a-z]*)
+desolat([a-z]+)
