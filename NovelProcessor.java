@@ -67,7 +67,7 @@ public class NovelProcessor {
         }
 
         try {
-            FileWriter output = new FileWriter(bookInput+"_wc.txt");
+            FileWriter output = new FileWriter("wc/"+bookInput+"_wc.txt");
             for (String patternLine = patternReader.readLine(); patternLine != null; patternLine = patternReader.readLine()) {
                 System.out.println(patternLine);
                 Pattern pattern = Pattern.compile(patternLine);
