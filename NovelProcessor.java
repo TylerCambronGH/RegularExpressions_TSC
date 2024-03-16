@@ -39,7 +39,7 @@ public class NovelProcessor {
         Scanner inputScanner = new Scanner(System.in);
 
         // Book File
-        System.out.print("Book Name: ");
+        System.out.print("Book Name (.txt): ");
         String bookInput = inputScanner.nextLine();
         File bookFile;
         BufferedReader bookReader;
@@ -54,12 +54,12 @@ public class NovelProcessor {
         closeReader(bookReader);
 
         // Pattern File
-        //System.out.print("\nPattern File Name: ");
-        //String patternInput = inputScanner.nextLine();
+        System.out.print("\nPattern File Name (.txt): ");
+        String patternInput = inputScanner.nextLine();
         File patternFile;
         BufferedReader patternReader;
         try {
-            patternFile = new File("regular_expressions.txt");
+            patternFile = new File(patternInput+".txt");
             patternReader = new BufferedReader(new FileReader(patternFile));;
         } catch (FileNotFoundException e) {
             inputScanner.close();
