@@ -26,8 +26,8 @@ public class WordCounter {
             }
         }
 
-        for (String ptrn : wordCounts.keySet()) {
-            System.out.println(ptrn + " : " + wordCounts.get(ptrn));
+        for (String pattern : wordCounts.keySet()) {
+            System.out.println(pattern + " : " + wordCounts.get(pattern));
         }
     } 
 }
