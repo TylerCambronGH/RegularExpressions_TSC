@@ -8,14 +8,29 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+* Description of this class.
+* @author Tyler Cambron
+* @version 1.0
+* Assignment 4
+* CS322 - Compiler Construction
+* Spring 2024
+*/
+
 public class NovelProcessor {
+    /*
+     * Scans given book for given RegEx pattern, returns the number of times the pattern is found.
+     * @param bookFile The file object used to parse.
+     * @param pattern regex pattern.
+     * @return Integer count of pattern instances.
+     */
     static int scanBook(File bookFile, Pattern pattern) {
         try {
             int pCount = 0;
             BufferedReader bookReader = new BufferedReader(new FileReader(bookFile));
             for (String line = bookReader.readLine(); line != null; line = bookReader.readLine()) {
                 Matcher matcher = pattern.matcher(line);
-                if (matcher.find()) {
+                while (matcher.find()) {
                    pCount += 1;
                 }
             }
@@ -27,6 +42,10 @@ public class NovelProcessor {
         }
     }
 
+    /**
+     * Closes a BufferedReader object.
+     * @param reader BufferedReader object
+     */
     static void closeReader(BufferedReader reader) {
         try {
             reader.close();
@@ -66,6 +85,7 @@ public class NovelProcessor {
             return;
         }
 
+        // Write to file
         try {
             FileWriter output = new FileWriter("wc/"+bookInput+"_wc.txt");
             for (String patternLine = patternReader.readLine(); patternLine != null; patternLine = patternReader.readLine()) {
@@ -82,7 +102,8 @@ public class NovelProcessor {
             closeReader(patternReader);
             return;
         }
-
+        
+        // fin
         System.out.print("\n");
         inputScanner.close();
         closeReader(patternReader);
